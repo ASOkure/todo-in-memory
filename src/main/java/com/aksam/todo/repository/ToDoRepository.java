@@ -52,6 +52,7 @@ public class ToDoRepository implements CommonRepository<ToDo>{
 	public Iterable<ToDo> findAll() {
 		return toDos.entrySet().stream().sorted(entryComparator).
 				map(Map.Entry::getValue).collect(Collectors.toList());
+		
 	}
 	
 	private Comparator<Map.Entry<String,ToDo>> entryComparator = (Map.
